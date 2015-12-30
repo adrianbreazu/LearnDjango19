@@ -19,4 +19,10 @@ Lesson 1
     - for creating an app run the following line in command line:
         $ python manage.py startapp polls
     - this will create a new directory structure:
+- STEP 4 - WRITE YOUR FIRST VIEW
+    - for this you need to edit the polls/views.py
+    - in order to call a view you need to map it to URL, so please create file urls.py in polls directory
+    - add the url line in polls/urls.py
+    - after this you need to link the app urls.py to the project urls.py by changing the mysite/urls.py file
+    - now with $python manager.py runserver you should be able to access the localhost:8000/polls/ message
 -
