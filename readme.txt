@@ -11,6 +11,12 @@ Lesson 1
         - mysite/urls.py - the URL declaration for this django project , a table of content
         - mysite/wsgi.py -  an entry-point for WSGI-compatible web servers to serve the project
 - STEP 2 - RUN THE SERVER - NOT FOR PRODUCTION !!!
-    - $python manage.py runserver
+    $ python manage.py runserver
     - if you want to run on a different port please add the port number
+- STEP 3 - CREATE AN APP
+    - project vs app: an app is an web application that does somethig, a project is a collection of apps
+    for an particular website. An app can be present in multiple projects
+    - for creating an app run the following line in command line:
+        $ python manage.py startapp polls
+    - this will create a new directory structure:
 -
