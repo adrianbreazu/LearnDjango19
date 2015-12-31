@@ -44,3 +44,21 @@ Lesson 2
         - django.contrib.staticfiles - framework for managing static files
     $ python manage.py migrate
         - this will run migrate for all installed apps
+- STEP 2 - CREATE MODELS
+    - this will represent the database layer
+    - DEF: a model is te single, definitive source of truth about your data. it continas the fields and
+    behaviours of the data you're storing.
+    - each model class needs to be a subclass of django,db.model.Model. Each clas variable represents a
+    database field in the model. The variable name will represent the column name, you can also choose a
+    human-readable name (this will be the first positional argument.
+- STEP 3 - ACTIVATE MODELS
+    - go edit mysite/settings.py and change the INSTALLED_APPS by adding the plug to the new app:
+        'polls.apps.PollsConfig'
+    - now run the migrate polls command:
+        $ python manage.py makemigrations polls
+    - now run the sqlmigrate command:
+        $ python manage.py sqlmigrate polls 0001
+    - if you need to check for problems in your project you can run the next command without making
+    migrations $ python manage.py check
+    - now you must run the migration using the command:
+        $ python manage.py migrate
