@@ -112,3 +112,9 @@
     - or use the get_object_or_404() shortcut. you should use this function instead of automatically catching the
     ObjectDoesNotExist  because that would couple the model layer to the view layer. One of the foremost design goals
     of Django is to maintain loose coupling. Some controlled coupling is introduced in the django.shortcuts module.
+- STEP 5 - USe the template system
+    - template system uses dot-lookup syntax. In the example {{ question.question_text }}, first Django does a
+    dictionary lookup on the object question. Failing that it tries an attribute lookup which works in this case. If
+    it would also failed, it would've tried a list-index lookup.
+    - method-calling happens in the {% for %} loop: question.choice_set.all() which returns an iterable of Choice objects
+    and is suitable for use in the {% for %} tag
