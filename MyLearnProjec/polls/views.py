@@ -1,4 +1,4 @@
-from django.shortcuts import loader
+from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Question
 
@@ -6,13 +6,10 @@ from .models import Question
 def index(request):
     # display the latest 5 poll questions in the system separated by commas, according to publication date
     latest_question_list = Question.objects.order_by('-pub_date')[:5]
-    template = loader.get_template('polls/index.html')
     context = {
         'latest_question_list': latest_question_list
     }
-    #output = ', '.join([q.question_text for q in latest_question_list])
-    #return HttpResponse(output)
-    return HttpResponse(template.render(context, request))
+    return render(request, 'polls/index.html', context)
 
 
 def detail (request, question_id):
