@@ -3,8 +3,11 @@
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
 <form action="{% url 'polls:vote' question.id %}" method="post">
+    <!-- all POST forms that are targeted at internal URLs should use the template tag -->
     {% csrf_token %}
     {% for choice in question.choice_set.all %}
+        <!-- The name of each radio button is 'choice'. that means when somebody selects one of the radio
+         buttos and submits the form, it'll send the POST data choice=# where # is the id of the selected choice -->
         <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{choice.id}}"/>
         <label for="choice{{forloop.counter}}">{{choice.choice_text}}</label><br />
     {% endfor %}

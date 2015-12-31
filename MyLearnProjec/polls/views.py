@@ -27,7 +27,9 @@ def results(request, question_id):
 def vote(request, question_id):
     question = get_object_or_404(Question, pk = question_id)
     try:
+        # request.POST is a dictionary like object that lets you access submitted data by key name, in this case request.POST['choice]
         selected_choice = question.choice_set.get(pk=request.POST['choice'])
+    # it will raise KeyError if choice wasn't provided in Post data.
     except (KeyError, Choice.DoesNotExist):
         # redisplay the question voting form.
         return render(request, 'polls/detail.html',{
@@ -37,5 +39,10 @@ def vote(request, question_id):
     else:
         selected_choice.votes += 1
         selected_choice.save()
+        # Always return an HttpResponseRedirect after successfully dealing
+        # with POST data. This prevents data from being posted twice if a
+        # user hits the Back button.
+        # after incrementing the choice count, the code returns an HttpResponseRedirect
+        #the reverse() function helps avoid having to hardcode a URL in the view function.
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
 
