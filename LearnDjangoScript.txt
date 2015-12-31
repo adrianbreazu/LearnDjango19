@@ -109,3 +109,6 @@
     installed
 - STEP 4 - RAISING A 404 ERROR
     - you can raise 404 error pages using the library from django.http import Http404
+    - or use the get_object_or_404() shortcut. you should use this function instead of automatically catching the
+    ObjectDoesNotExist  because that would couple the model layer to the view layer. One of the foremost design goals
+    of Django is to maintain loose coupling. Some controlled coupling is introduced in the django.shortcuts module.
