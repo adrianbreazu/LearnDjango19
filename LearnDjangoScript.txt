@@ -128,4 +128,4 @@
 
 -------------------- Lesson 4 --------------------
 - STEP 1 - Write a simple form
-    -
+    - see comments in polls.html, views.py
