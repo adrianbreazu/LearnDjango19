@@ -129,3 +129,7 @@
 -------------------- Lesson 4 --------------------
 - STEP 1 - Write a simple form
     - see comments in polls.html, views.py
+- STEP 2 - Less code is better
+    - detail() and results() are redundant
+    - Amend URLconf - see urls.py (changed <question_id> to <pk>)
+    - Amends views - see views.py
