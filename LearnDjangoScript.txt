@@ -25,4 +25,22 @@ Lesson 1
     - add the url line in polls/urls.py
     - after this you need to link the app urls.py to the project urls.py by changing the mysite/urls.py file
     - now with $python manager.py runserver you should be able to access the localhost:8000/polls/ message
--
+
+Lesson 2
+- STEP 1 - Database setup
+    - open mysite/settings.py . by default django uses SQLite
+    - if you want to use another database, you need to install appropiate "database bindings" and change the
+    following keys in DATABASE 'default':
+        - ENGINE - like 'django.db.backends.sqlite3' or 'django.db.backends.postgresql', ...
+        - NAME - the name of the database, it should be a full absolute path with file name. example
+        'os.path.join(BASE_DIR, 'db.sqlite3')'
+        - USERNAME, PASSWORD and HOST should be used if a different SQLite database is use
+    - INSTALLED_APPS - represent the list of installed django apps
+        - django.contrib.admin - the admin site
+        - django.contrib.auth - the authentication system
+        - django.contrib.contenttype - framework for content types
+        - django.contrib.sessions - a session framework
+        - django.contrib.messages - a messaging framework
+        - django.contrib.staticfiles - framework for managing static files
+    $ python manage.py migrate
+        - this will run migrate for all installed apps
