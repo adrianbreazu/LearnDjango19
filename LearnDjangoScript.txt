@@ -1,4 +1,4 @@
-Lesson 1
+-------------------- Lesson 1 --------------------
 - STEP 1 - Create a project
     - from command line run:
         $ django-admin startproject mysite
@@ -26,7 +26,7 @@ Lesson 1
     - after this you need to link the app urls.py to the project urls.py by changing the mysite/urls.py file
     - now with $python manager.py runserver you should be able to access the localhost:8000/polls/ message
 
-Lesson 2
+-------------------- Lesson 2 --------------------
 - STEP 1 - Database setup
     - open mysite/settings.py . by default django uses SQLite
     - if you want to use another database, you need to install appropiate "database bindings" and change the
@@ -88,3 +88,12 @@ Lesson 2
             from .models import Question
 
             admin.site.register(Question)
+
+-------------------- Lesson 3 --------------------
+- STEP 1 - VIEW OVERVIEW
+    - A view is a “type” of Web page in your Django application that generally serves a
+    specific function and has a specific template
+    - URLconf maps URL patterns to views
+- STEP 2 - Write more views
+    - you can add more views by adding them to polls/views.py
+    - now you need to wire them to the url(), polls.urls module
