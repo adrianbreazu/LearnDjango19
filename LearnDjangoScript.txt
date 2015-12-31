@@ -124,4 +124,8 @@
 - STEP 7 - Naming URL names
     - useful when you have multiple apps that all have the same view.
     - you need to add namespace. This can easily be done by adding app_name in the polls/urls.py
-    - now you have to chnage your polls/index.html
+    - now you have to change your polls/index.html
+
+-------------------- Lesson 4 --------------------
+- STEP 1 - Write a simple form
+    -
