@@ -62,3 +62,29 @@ Lesson 2
     migrations $ python manage.py check
     - now you must run the migration using the command:
         $ python manage.py migrate
+- STEP 4 - Play with the API
+    - $ python manage.py shell
+    - now that you are in shell please use the follwing commands:
+        >>> from polls.models import Question, Choice
+        >>> Question.objects.all()
+        >>> from django.utils import timezone
+        >>> q = Question(question_text="What's new?", pub_date=timezone.now())
+        >>> q.save()
+        >>> q.id
+        >>> q.question_text
+        >>> q.question_text = "What's up?"
+        >>> q.save()
+        >>> Question.objects.all()
+    - you can set a more human readable text by adding the __str__ method to model. It
+    is highly recommended to do this for all model classes
+- STEP 5 - Introducing the Django Admin
+    - create superuser using the command:
+        $ python manage.py createsuperuser
+        (username: adrianb & password: ioana007)
+    - next start the development server and fo the /admin page
+    - make the poll app modifiable from the admin page:
+        go to polls/admin.py and add the following:
+            from django.contrib import admin
+            from .models import Question
+
+            admin.site.register(Question)
