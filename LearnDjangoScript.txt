@@ -107,3 +107,5 @@
     and there you can add the .html file. Because how Djanog is build you can refer the template simply as polls/index.html
     - you need to add the APP_DIRS = True to mysite/settings.py this way django will look for teamplates in each app
     installed
+- STEP 4 - RAISING A 404 ERROR
+    - you can raise 404 error pages using the library from django.http import Http404
