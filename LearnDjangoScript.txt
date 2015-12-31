@@ -97,3 +97,13 @@
 - STEP 2 - Write more views
     - you can add more views by adding them to polls/views.py
     - now you need to wire them to the url(), polls.urls module
+- STEP 3 - Write views tat actually do something
+    - A view is responsible for doing one of two things: return a HttpResponse object containing the content for
+    the requested page, or raise an exeption such as Http404.
+    - A view can read records from db, use a template system, generate PDF file, output XML, create ZIP or other
+    things. All Django wants is that HttpResponse or an exception.
+    - create a directory called "templates" in your app. the templates describe how Django will load and render templates.
+    In this template directory you need to create a new directory called the same as the app in this case polls and
+    and there you can add the .html file. Because how Djanog is build you can refer the template simply as polls/index.html
+    - you need to add the APP_DIRS = True to mysite/settings.py this way django will look for teamplates in each app
+    installed

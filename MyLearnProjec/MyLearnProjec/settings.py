@@ -53,6 +53,8 @@ MIDDLEWARE_CLASSES = [
 
 ROOT_URLCONF = 'MyLearnProjec.urls'
 
+APPS_DIRS = True
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
