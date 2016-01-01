@@ -144,3 +144,5 @@
 -------------------- Lesson 6 --------------------
 - STEP 1 - Customize app's look and feel
     - first create a static directory in polls directory
+    - crete polls directoy into static folder
+    - create images directory in the polls
