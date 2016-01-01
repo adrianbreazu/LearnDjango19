@@ -159,3 +159,9 @@
     - you can further improve the False/True disaply by editing a few attributes in models.py
     - if you want to customize list display you need to use list_display('','') in admin.py
     - if you want to add filter you need to use list_filter = [''] in admin.py
+- STEP 3 - Customize project templates
+    - you can create templates directory in the project directly by adding the following line in mysite/settings.py
+    on TEMPLATES variable under 'DIRS'
+        [os.path.join(BASE_DIR, 'templates'
+    - templates that below to a specific application should be added in the app, templates that belong to the entire
+     sire should be added in the general templates directory
