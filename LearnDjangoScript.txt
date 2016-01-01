@@ -140,3 +140,7 @@
     automatically find tests
 - STEP 3 - Test a view
     - see changed made to views.py and tests.py
+
+-------------------- Lesson 6 --------------------
+- STEP 1 - Customize app's look and feel
+    - first create a static directory in polls directory
