@@ -147,7 +147,6 @@
     - crete polls directoy into static folder
     - create images directory in the polls
 
-
 -------------------- Lesson 7 --------------------
 - STEP 1 - Customize the admin form
     - for each table that should editable in admin, you need to add the line:
@@ -155,3 +154,8 @@
     - you can choose to add field sets like the code in class QuestionAdmin
     - you can inherit the StackInLine or TabularInLine class for your child relation table in admin.py. The data can be
     displayed in stacked format or in tabular format
+- STEP 2 - Customize admin change list
+    - by default Django displays the str() of each object. You can also use the list_display option in admin.py
+    - you can further improve the False/True disaply by editing a few attributes in models.py
+    - if you want to customize list display you need to use list_display('','') in admin.py
+    - if you want to add filter you need to use list_filter = [''] in admin.py
