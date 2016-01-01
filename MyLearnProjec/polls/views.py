@@ -2,6 +2,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.core.urlresolvers import reverse
 from django.views import generic
+from django.utils import timezone
 
 from .models import Question, Choice
 
@@ -15,13 +16,19 @@ class IndexView(generic.ListView):
             Return the last five published questions.
         :return:
         """
-        return Question.objects.order_by('-pub_date')[:5]
+        return Question.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')[:5]
 
 
 class DetailView(generic.DetailView):
     model = Question
     template_name = 'polls/detail.html'
 
+    def get_queryset(self):
+        """
+            Excludes any questions that aren't published yet.
+        :return:
+        """
+        return Question.objects.filter(pub_date__lte = timezone.now())
 
 class ResultsView(generic.DetailView):
     model = Question
@@ -68,4 +75,3 @@ def vote(request, question_id):
         # after incrementing the choice count, the code returns an HttpResponseRedirect
         #the reverse() function helps avoid having to hardcode a URL in the view function.
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
-

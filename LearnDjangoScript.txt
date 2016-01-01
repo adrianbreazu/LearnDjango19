@@ -135,6 +135,8 @@
     - Amends views - see views.py
 
 -------------------- Lesson 5 --------------------
-- STEP 1 - Write your first test
+- STEP 2 - Write your first test
     - a conventional place for an application's tests is in the application's tests.py file, this way the system will
     automatically find tests
+- STEP 3 - Test a view
+    - see changed made to views.py and tests.py
