@@ -146,3 +146,12 @@
     - first create a static directory in polls directory
     - crete polls directoy into static folder
     - create images directory in the polls
+
+
+-------------------- Lesson 7 --------------------
+- STEP 1 - Customize the admin form
+    - for each table that should editable in admin, you need to add the line:
+        admin.site.register(_classname_)
+    - you can choose to add field sets like the code in class QuestionAdmin
+    - you can inherit the StackInLine or TabularInLine class for your child relation table in admin.py. The data can be
+    displayed in stacked format or in tabular format
