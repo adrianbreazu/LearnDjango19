@@ -80,7 +80,7 @@
 - STEP 5 - Introducing the Django Admin
     - create superuser using the command:
         $ python manage.py createsuperuser
-        (username: adrianb & password: ioana007)
+        (username: adrianb & password: )
     - next start the development server and fo the /admin page
     - make the poll app modifiable from the admin page:
         go to polls/admin.py and add the following:
@@ -133,3 +133,8 @@
     - detail() and results() are redundant
     - Amend URLconf - see urls.py (changed <question_id> to <pk>)
     - Amends views - see views.py
+
+-------------------- Lesson 5 --------------------
+- STEP 1 - Write your first test
+    - a conventional place for an application's tests is in the application's tests.py file, this way the system will
+    automatically find tests
